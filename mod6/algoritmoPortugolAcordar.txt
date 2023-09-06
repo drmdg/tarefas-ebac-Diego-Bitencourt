@@ -1,0 +1,37 @@
+INICIO
+
+1 – Acordar
+2 – Abrir o olho
+3 – Levantar da cama
+4 – Abrir a porta do quarto
+5 – Ir ao banheiro
+6 – Abrir a torneira
+7 – Lavar o rosto
+8 – Fechar a torneira
+9 – Secar o rosto
+10 – Ir à cozinha
+11 – Pegar a chaleira
+12 – Abrir a torneira
+13 – Encher a chaleira
+14 – Fechar a torneira 
+15 – Ligar a chaleira
+16 – Pegar o bule
+17 – Abrir o armário
+18 – Pegar o filtro
+19 – Colocar o filtro no bule
+20 – Pegar o pó de café
+21 – Colocar o pó no bule
+22 – Guardar o pó
+23 – Fechar o armário
+24 – Colocar água fervendo no filtro 
+25 – Pegar a garrafa
+26 – Abrir a garrafa
+27 – Botar o café dentro da garrafa
+28 – Abrir armário
+29 – Pegar xícara 
+30 – Fechar armário
+31 – Botar café na xícara
+32 – Fechar a garrafa
+33 – Beber o café
+
+FIM
