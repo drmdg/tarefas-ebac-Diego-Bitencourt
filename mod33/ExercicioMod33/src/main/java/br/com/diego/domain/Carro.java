@@ -18,6 +18,7 @@ public class Carro {
 
     @Column(name = "nome", nullable = false)
     private String nome;
+
     @OneToMany(mappedBy = "carro")
     private List<Acessorio> acessorios;
     @ManyToOne

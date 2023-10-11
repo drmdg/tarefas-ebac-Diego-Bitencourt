@@ -2,7 +2,10 @@ import main.java.br.com.diego.dao.*;
 import main.java.br.com.diego.domain.Acessorio;
 import main.java.br.com.diego.domain.Carro;
 import main.java.br.com.diego.domain.Marca;
+import org.junit.After;
 import org.junit.Test;
+
+import java.util.List;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -19,6 +22,19 @@ public class Teste {
         marcaDao = new MarcaDao();
 
     }
+
+    @After
+    public void end() {
+        List<Acessorio> listAc = acessorioDao.buscarTodos();
+        listAc.forEach(acessorio -> acessorioDao.excluir(acessorio));
+
+        List<Carro> listCar = carroDao.buscarTodos();
+        listCar.forEach(carro -> carroDao.excluir(carro));
+
+        List<Marca> listMarc = marcaDao.buscarTodos();
+        listMarc.forEach(marca -> marcaDao.excluir(marca));
+    }
+
 
     @Test
     public void cadastrar() {
@@ -52,11 +68,12 @@ public class Teste {
         marca.add(carro);
         marca.add(carro1);
 
-        acessorioDao.cadastrar(acessorio);
-        acessorioDao.cadastrar(acessorio1);
+        marcaDao.cadastrar(marca);
         carroDao.cadastrar(carro);
         carroDao.cadastrar(carro1);
-        marcaDao.cadastrar(marca);
+        acessorioDao.cadastrar(acessorio);
+        acessorioDao.cadastrar(acessorio1);
+
 
     }
 }

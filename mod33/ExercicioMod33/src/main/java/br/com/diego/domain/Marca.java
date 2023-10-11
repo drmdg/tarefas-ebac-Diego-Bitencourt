@@ -19,6 +19,7 @@ public class Marca {
     @Column(name = "nome", nullable = false)
     private String nome;
 
+
     @OneToMany(mappedBy = "marca")
     private List<Carro> carros;
 
