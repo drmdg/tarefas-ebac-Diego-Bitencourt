@@ -37,7 +37,7 @@ public class ClienteJpaDaoTest {
 		list.forEach(cli -> {
 			try {
 				clienteDao.excluir(cli);
-			} catch (DAOException e) {
+			} catch (DAOException e	) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
