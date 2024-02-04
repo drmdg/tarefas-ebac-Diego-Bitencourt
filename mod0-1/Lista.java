@@ -166,7 +166,7 @@ public class Lista {
 
         System.out.println("retirando primeiro objeto: " + lista.remove(0));
         System.out.println("retirando o último objeto: " + lista.remove(8));
-        System.out.println("retirando objeto do meio: " + lista.remove(3));
+        System.out.println("retirando objeto do meio: " + lista.remove(2));
 
 
 
