@@ -16,7 +16,7 @@ public class ConfiguracaoRabbitMQ {
 
     @Bean
     public Queue queue (){
-        return new Queue(NOME_FILA,false)
+        return new Queue(NOME_FILA,false);
     }
 
     public TopicExchange exchange(){
