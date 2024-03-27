@@ -5,10 +5,7 @@ package br.com.diego.domain;
 
 import java.math.BigDecimal;
 
-/**
- * @author rodrigo.pires
- *
- */
+
 public class ProdutoQuantidade {
 
 	private Produto produto;

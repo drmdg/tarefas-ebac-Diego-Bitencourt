@@ -6,10 +6,7 @@ package br.com.diego.dao;
 import br.com.diego.dao.generic.GenericDAO;
 import br.com.diego.domain.Produto;
 
-/**
- * @author rodrigo.pires
- *
- */
+
 public class ProdutoDAO extends GenericDAO<Produto, String> implements IProdutoDAO {
 	
 	public ProdutoDAO() {

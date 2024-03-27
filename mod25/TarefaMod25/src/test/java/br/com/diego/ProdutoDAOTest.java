@@ -17,10 +17,6 @@ import br.com.diego.dao.ProdutoDAO;
 import br.com.diego.domain.Produto;
 import br.com.diego.exceptions.TipoChaveNaoEncontradaException;
 
-/**
- * @author rodrigo.pires
- *
- */
 public class ProdutoDAOTest {
 	
 	private IProdutoDAO produtoDao;

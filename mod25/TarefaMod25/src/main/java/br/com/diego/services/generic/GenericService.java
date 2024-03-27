@@ -10,10 +10,7 @@ import br.com.diego.dao.Persistente;
 import br.com.diego.dao.generic.IGenericDAO;
 import br.com.diego.exceptions.TipoChaveNaoEncontradaException;
 
-/**
- * @author rodrigo.pires
- *
- */
+
 public abstract class GenericService<T extends Persistente, E extends Serializable> 
 	implements IGenericService<T, E> {
 	

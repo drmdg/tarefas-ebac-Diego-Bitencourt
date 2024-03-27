@@ -26,10 +26,6 @@ import br.com.diego.domain.Venda;
 import br.com.diego.domain.Venda.Status;
 import br.com.diego.exceptions.TipoChaveNaoEncontradaException;
 
-/**
- * @author rodrigo.pires
- *
- */
 public class VendaDAOTest {
 	
 	private IVendaDAO vendaDao;
@@ -37,8 +33,6 @@ public class VendaDAOTest {
 	private IClienteDAO clienteDao;
 	
 	private IProdutoDAO produtoDao;
-
-	//private Venda venda;
 	
 	private Cliente cliente;
 	

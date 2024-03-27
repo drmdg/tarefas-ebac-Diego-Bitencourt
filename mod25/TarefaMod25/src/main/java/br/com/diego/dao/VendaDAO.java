@@ -8,10 +8,7 @@ import br.com.diego.domain.Venda;
 import br.com.diego.domain.Venda.Status;
 import br.com.diego.exceptions.TipoChaveNaoEncontradaException;
 
-/**
- * @author rodrigo.pires
- *
- */
+
 public class VendaDAO extends GenericDAO<Venda, String> implements IVendaDAO {
 
 	@Override

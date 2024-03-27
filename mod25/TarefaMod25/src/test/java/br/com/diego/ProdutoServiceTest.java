@@ -16,10 +16,7 @@ import br.com.diego.exceptions.TipoChaveNaoEncontradaException;
 import br.com.diego.services.IProdutoService;
 import br.com.diego.services.ProdutoService;
 
-/**
- * @author rodrigo.pires
- *
- */
+
 public class ProdutoServiceTest {
 
 	private IProdutoService produtoService;
