@@ -30,6 +30,4 @@ public class Endereco {
     private String pais;
     @Column(name = "numero_da_casa", nullable = false)
     private Integer numeroCasa;
-    @OneToOne(mappedBy = "endereco")
-    private Cliente cliente;
 }

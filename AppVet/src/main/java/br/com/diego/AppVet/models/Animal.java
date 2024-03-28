@@ -28,12 +28,8 @@ public class Animal {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "animal_id")
     private List<Vacina> vacinas;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_cliente_fk",
-            foreignKey = @ForeignKey(name = "fk_animal"),
-            referencedColumnName = "id", nullable = false
-    )
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
-
 
 }

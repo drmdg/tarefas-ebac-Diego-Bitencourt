@@ -21,7 +21,7 @@ public class Cliente {
     private String nome;
     @Column(name = "cpf", nullable = false)
     private String cpf;
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL/*, fetch = FetchType.EAGER*/)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Animal> animais;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id", referencedColumnName = "id")
