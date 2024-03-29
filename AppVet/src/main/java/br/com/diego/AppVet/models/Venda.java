@@ -60,6 +60,7 @@ public class Venda {
             ProdutoQuantidade prodQtd = new ProdutoQuantidade();
             prodQtd.setProduto(produto);
             prodQtd.setQuantidade(quantidade);
+            prodQtd.setVenda(this);
             produtos.add(prodQtd);
         }
         recalcularValorTotalVenda();

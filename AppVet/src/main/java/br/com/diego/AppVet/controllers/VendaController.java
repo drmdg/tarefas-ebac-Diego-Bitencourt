@@ -1,7 +1,9 @@
 package br.com.diego.AppVet.controllers;
 
+import br.com.diego.AppVet.dtos.ProdutoDto;
 import br.com.diego.AppVet.dtos.VacinaDto;
 import br.com.diego.AppVet.dtos.VendaDto;
+import br.com.diego.AppVet.enums.Status;
 import br.com.diego.AppVet.models.*;
 import br.com.diego.AppVet.services.ClienteService;
 import br.com.diego.AppVet.services.ProdutoQuantidadeService;
@@ -13,6 +15,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/venda")
@@ -36,6 +40,32 @@ public class VendaController {
             prodqtd.setVenda(venda);
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(vendaService.save(venda));
+
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> FinalizaVenda(@PathVariable (value = "id")UUID id){
+        Optional<Venda> venda = Optional.ofNullable(vendaService.getClienteById(id));
+        if (venda.isPresent()){
+            venda.get().setStatus(Status.valueOf("CONCLUIDA"));
+            vendaService.save(venda.get());
+            return ResponseEntity.status(HttpStatus.OK).body("Venda Concluida");
+        }else{
+            return ResponseEntity.status(HttpStatus.OK).body("Venda nao encontrada");
+        }
+
+    }
+
+    @PutMapping("adicionarproduto/{id}")
+    public ResponseEntity<Object> adicionaItemVenda(@PathVariable (value = "id")UUID id, @RequestBody Produto produto){
+        Optional<Venda> venda = Optional.ofNullable(vendaService.getClienteById(id));
+        if (venda.isPresent()){
+            venda.get().adicionarProduto(produto,1);
+            vendaService.save(venda.get());
+            return ResponseEntity.status(HttpStatus.OK).body(vendaService.save(venda.get()));
+        }else{
+            return ResponseEntity.status(HttpStatus.OK).body("Venda nao encontrada");
+        }
 
     }
 

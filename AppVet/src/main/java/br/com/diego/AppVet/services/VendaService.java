@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class VendaService {
@@ -19,5 +20,9 @@ public class VendaService {
 
     public List<Venda> findAll() {
         return vendaRepository.findAll();
+    }
+
+    public Venda getClienteById(UUID id) {
+        return vendaRepository.getClienteById(id);
     }
 }
