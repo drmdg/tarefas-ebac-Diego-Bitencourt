@@ -1,4 +1,7 @@
 package br.com.diego.AppVet.dtos;
 
-public record VacinaDto() {
+import java.math.BigDecimal;
+import java.util.UUID;
+
+public record VacinaDto(String nome, String codigo, String descricao, BigDecimal valor, UUID animalId) {
 }

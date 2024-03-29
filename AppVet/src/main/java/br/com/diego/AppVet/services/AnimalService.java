@@ -7,6 +7,9 @@ import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.UUID;
+
 @Service
 public class AnimalService {
 
@@ -21,5 +24,13 @@ public class AnimalService {
 
     public Animal merge(Animal animal) {
         return entityManager.merge(animal);
+    }
+
+    public List<Animal> findAll() {
+        return animalRepository.findAll();
+    }
+
+    public Animal getAnimalById(UUID uuid) {
+        return animalRepository.getAnimalById(uuid);
     }
 }

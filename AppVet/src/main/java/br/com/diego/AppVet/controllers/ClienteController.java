@@ -1,8 +1,6 @@
 package br.com.diego.AppVet.controllers;
 
 import br.com.diego.AppVet.dtos.ClienteDto;
-import br.com.diego.AppVet.dtos.EnderecoDto;
-import br.com.diego.AppVet.models.Animal;
 import br.com.diego.AppVet.models.Cliente;
 import br.com.diego.AppVet.models.Endereco;
 import br.com.diego.AppVet.services.AnimalService;
@@ -14,8 +12,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
@@ -46,6 +46,13 @@ public class ClienteController {
     @GetMapping
     public ResponseEntity<List<Cliente>> getAllClientes(){
         return ResponseEntity.status(HttpStatus.OK).body(clienteService.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getClienteById(@PathVariable(value = "id")UUID id){
+        Optional<Cliente> clienteOptional = Optional.ofNullable(clienteService.getClienteById(id));
+        return clienteOptional.<ResponseEntity<Object>>map(cliente -> ResponseEntity.status(HttpStatus.OK).body(cliente)).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("cliente nao encontrado"));
+
     }
 }
 

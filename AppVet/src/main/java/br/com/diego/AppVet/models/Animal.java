@@ -28,8 +28,11 @@ public class Animal {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "animal_id")
     private List<Vacina> vacinas;
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
 
+    public void addVacina(Vacina vacina){
+        vacinas.add(vacina);
+    }
+    public void removeVacina(Vacina vacina){
+        vacinas.remove(vacina);
+    }
 }

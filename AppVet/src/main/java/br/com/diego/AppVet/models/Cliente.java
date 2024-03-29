@@ -21,9 +21,17 @@ public class Cliente {
     private String nome;
     @Column(name = "cpf", nullable = false)
     private String cpf;
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "cliente_id")
     private List<Animal> animais;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id", referencedColumnName = "id")
     private Endereco endereco;
+
+    public void setAnimal(Animal animal){
+        animais.add(animal);
+    }
+    public void removeAnimal(Animal animal){
+        animais.remove(animal);
+    }
 }
