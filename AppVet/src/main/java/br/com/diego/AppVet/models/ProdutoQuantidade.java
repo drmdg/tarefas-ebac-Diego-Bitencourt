@@ -1,5 +1,6 @@
 package br.com.diego.AppVet.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class ProdutoQuantidade {
             foreignKey = @ForeignKey(name = "fk_prod_qtd_venda"),
             referencedColumnName = "id", nullable = false
     )
+    @JsonIgnore
     private Venda venda;
 
     public ProdutoQuantidade (){

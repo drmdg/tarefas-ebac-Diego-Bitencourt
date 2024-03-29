@@ -1,5 +1,8 @@
 package br.com.diego.AppVet.models;
 
+import br.com.diego.AppVet.enums.Status;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,18 +19,6 @@ import java.util.UUID;
 @Entity
 public class Venda {
 
-    public enum Status {
-        INICIADA, CONCLUIDA, CANCELADA;
-
-        public static Status getByName(String value) {
-            for (Status status : Status.values()) {
-                if (status.name().equals(value)) {
-                    return status;
-                }
-            }
-            return null;
-        }
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,8 +30,10 @@ public class Venda {
             foreignKey = @ForeignKey(name = "fk_venda_cliente"),
             referencedColumnName = "id", nullable = false
     )
+    @JsonIgnore
     private Cliente cliente;
     @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL/*, fetch = FetchType.EAGER*/)
+    @JsonManagedReference
     private Set<ProdutoQuantidade> produtos;
     @Column(name = "VALOR_TOTAL", nullable = false)
     private BigDecimal valorTotal;
