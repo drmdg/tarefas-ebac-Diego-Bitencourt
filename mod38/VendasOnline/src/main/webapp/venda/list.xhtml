@@ -1,0 +1,179 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<f:view>
+	<h:head>
+		<h:outputStylesheet>
+            th, td {
+                text-align: center;
+            }
+
+            h3 {
+                margin-top: 0;
+                text-align: center;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                box-sizing: border-box;
+                -webkit-box-sizing:border-box;
+                -moz-box-sizing: border-box;
+            }
+            
+        </h:outputStylesheet>
+	</h:head>
+	<h:body>
+		<h:form id="menu">
+			<p:menubar>
+				<p:submenu label="Cadastro" icon="pi pi-fw pi-user">
+					<p:menuitem value="Cliente" icon="pi pi-fw pi-user-plus" action="#{indexController.redirectCliente()}"/>
+					<p:menuitem value="Quarto" icon="pi pi-fw pi-inbox" action="#{indexController.redirectQuarto()}"/>
+				</p:submenu>
+				<p:submenu label="Venda" icon="pi pi-fw pi-shopping-cart">
+					<p:menuitem value="Diaria" icon="pi pi-fw pi-shopping-cart" action="#{indexController.redirectVenda()}"/>
+				</p:submenu>
+			</p:menubar>
+		</h:form>
+		<p:outputPanel>
+			<h3>Diarias cadastradas</h3>
+			<div class="ui-g">
+				<div class="ui-g-2" />
+				<div class="ui-g-12">
+					<h:form id="vendas">
+						<p:growl id="growl" sticky="true" />
+
+						<p:dataTable id="vendaList" var="vend"
+							value="#{diariaController.vendas}" lazy="true">
+							<p:column headerText="Id">
+								<h:outputText value="#{vend.id}" />
+							</p:column>
+							
+							<p:column headerText="Codigo">
+								<h:outputText id="codigoInput" value="#{vend.codigo}" />
+							</p:column>
+
+							<p:column headerText="Nome cliente">
+								<h:outputText id="nomeInput" value="#{vend.cliente.nome}" />
+							</p:column>
+
+							<p:column headerText="Quarto">
+								<h:outputText id="quartoinput" value="#{vend.quarto.nome}" />
+							</p:column>
+
+							<p:column headerText="Valor Total">
+								R$ <h:outputText id="valorInput" value="#{vend.quarto.valor}" />
+							</p:column>
+							
+							<p:column headerText="Status">
+								<h:outputText id="statusInput" value="#{vend.status}" />
+							</p:column>
+
+							<p:column>
+								<p:commandButton update="vendaList add" value="Editar"
+									icon="ui-icon-closethick"
+									action="#{diariaController.edit(vend)}"
+									styleClass="ui-icon-pencil"
+									rendered="#{vend.status.name().equals('INICIADA')}">
+								</p:commandButton>
+							</p:column>
+							<p:column>
+								<p:commandButton update="vendaList add" value="Cancelar"
+									icon="ui-icon-closethick"
+									action="#{diariaController.delete(vend)}"
+									styleClass="ui-priority-primary"
+									rendered="#{vend.status.name().equals('INICIADA')}">
+									<p:confirm header="Atenção" message="Tem certeza que deseja cancelar esta venda?" icon="pi pi-exclamation-triangle"/>
+								</p:commandButton>
+							</p:column>
+							<p:column>
+								<p:commandButton update="vendaList add" value="Finalizar"
+									icon="ui-icon-closethick"
+									action="#{diariaController.finalizar(vend)}"
+									styleClass="ui-priority-primary"
+									rendered="#{vend.status.name().equals('INICIADA')}">
+									<p:confirm header="Atenção" message="Tem certeza que deseja finalizar esta venda?" icon="pi pi-exclamation-triangle"/>
+								</p:commandButton>
+							</p:column>
+						</p:dataTable>
+						<br />
+						<p:confirmDialog id="confirmDialog" global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350px">
+				            <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+				            <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" />
+				        </p:confirmDialog>
+					</h:form>
+				</div>
+				<div class="ui-g-2"></div>
+			</div>
+			<h3>Criar nova Diaria</h3>
+			<div class="ui-g">
+				<div class="ui-g-2"></div>
+				<div class="ui-g-8">
+					<h:form id="add">
+						<div class="ui-fluid p-grid p-formgrid">
+							<div class="ui-fluid p-grid p-formgrid">
+							
+								<div class="p-field p-col-12 p-md-4">
+									<p:outputLabel for="Codigo" value="Codigo" />
+									<p:inputText id="Codigo"
+										value="#{diariaController.venda.codigo}" required="true" />
+									<p:message for="Codigo" />
+								</div>
+								
+								<div class="p-field p-col-12 p-md-4">
+									<p:outputLabel for="cliente" value="Cliente" />
+									<p:autoComplete id="cliente" value="#{diariaController.venda.cliente}"
+		                                completeMethod="#{diariaController.filtrarClientes}" scrollHeight="250"
+		                                var="cliente" itemLabel="#{cliente.nome}" itemValue="#{cliente}"
+		                                converter="clienteConverter" forceSelection="true"/>
+	                            </div>
+	                            
+								<div class="p-field p-col-12 p-md-4">
+									<p:outputLabel for="quarto" value="Quarto" />
+									<p:autoComplete id="quarto" value="#{diariaController.venda.quarto}"
+		                                completeMethod="#{diariaController.filtrarProdutos}" scrollHeight="250"
+		                                var="quarto" itemLabel="#{quarto.nome}" itemValue="#{quarto}"
+		                                converter="quartoConverter" forceSelection="true"/>
+	                            </div>
+		
+								<div class="p-field p-col-12 p-md-12">
+									<p:commandLink id="ajax" action="#{diariaController.voltarTelaInicial()}" style="margin-right:20px;" ajax="false" immediate="true">
+							            <h:outputText value="Voltar"/>
+							        </p:commandLink>
+									<p:commandButton update="@form :vendas"
+										value="Cadastrar" action="#{diariaController.add}"
+										rendered="#{!vendaController.isUpdate}">
+									</p:commandButton>
+									<p:commandButton update="@form :vendas:vendaList"
+										value="Atualizar" action="#{diariaController.update}"
+										rendered="#{vendaController.isUpdate}">
+									</p:commandButton>
+									<p:commandButton update="@form :vendas:vendaList"
+										value="Cancelar" action="#{diariaController.cancel}"
+										immediate="true">
+										<f:ajax render="add" resetValues="true"/>
+									</p:commandButton>
+								</div>
+							</div>
+						</div>
+						<br/><br/>
+						
+                     	<br />
+						<p:confirmDialog global="true" showEffect="fade" hideEffect="fade" responsive="true" width="350">
+				            <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no ui-button-flat"/>
+				            <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" />
+				        </p:confirmDialog>
+						
+					</h:form>
+					
+					
+					
+					
+					
+				</div>
+				<div class="ui-g-2"></div>
+			</div>
+		</p:outputPanel>
+	</h:body>
+</f:view>
+</html>
