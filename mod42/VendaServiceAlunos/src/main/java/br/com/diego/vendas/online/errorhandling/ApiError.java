@@ -1,4 +1,4 @@
-package br.com.rpires.vendas.online.errorhandling;
+package br.com.diego.vendas.online.errorhandling;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package br.com.rpires.vendas.online;
+package br.com.diego.vendas.online;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

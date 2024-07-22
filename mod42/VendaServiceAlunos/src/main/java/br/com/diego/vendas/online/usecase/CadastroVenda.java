@@ -1,7 +1,4 @@
-/**
- * 
- */
-package br.com.rpires.vendas.online.usecase;
+package br.com.diego.vendas.online.usecase;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -11,14 +8,14 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.rpires.vendas.online.domain.Produto;
-import br.com.rpires.vendas.online.domain.Venda;
-import br.com.rpires.vendas.online.domain.Venda.Status;
-import br.com.rpires.vendas.online.dto.VendaDTO;
-import br.com.rpires.vendas.online.exception.EntityNotFoundException;
-import br.com.rpires.vendas.online.repository.IVendaRepository;
-import br.com.rpires.vendas.online.service.ClienteService;
-import br.com.rpires.vendas.online.service.IProdutoService;
+import br.com.diego.vendas.online.domain.Produto;
+import br.com.diego.vendas.online.domain.Venda;
+import br.com.diego.vendas.online.domain.Venda.Status;
+import br.com.diego.vendas.online.dto.VendaDTO;
+import br.com.diego.vendas.online.exception.EntityNotFoundException;
+import br.com.diego.vendas.online.repository.IVendaRepository;
+import br.com.diego.vendas.online.service.ClienteService;
+import br.com.diego.vendas.online.service.IProdutoService;
 
 @Service
 public class CadastroVenda {

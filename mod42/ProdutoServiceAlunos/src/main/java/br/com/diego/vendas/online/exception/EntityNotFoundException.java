@@ -1,4 +1,4 @@
-package br.com.rpires.vendas.online.exception;
+package br.com.diego.vendas.online.exception;
 
 import java.util.HashMap;
 import java.util.Map;

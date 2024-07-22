@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.rpires.vendas.online.dto;
+package br.com.diego.vendas.online.dto;
 
 import java.time.Instant;
 

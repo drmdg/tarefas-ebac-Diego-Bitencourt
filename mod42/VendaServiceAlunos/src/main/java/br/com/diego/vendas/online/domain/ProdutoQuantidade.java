@@ -1,7 +1,4 @@
-/**
- * 
- */
-package br.com.rpires.vendas.online.domain;
+package br.com.diego.vendas.online.domain;
 
 import java.math.BigDecimal;
 
@@ -11,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-
 
 @Getter
 @Setter

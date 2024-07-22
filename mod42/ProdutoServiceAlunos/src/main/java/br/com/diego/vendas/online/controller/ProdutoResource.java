@@ -1,7 +1,5 @@
-/**
- * 
- */
-package br.com.rpires.vendas.online.controller;
+
+package br.com.diego.vendas.online.controller;
 
 import javax.validation.Valid;
 
@@ -18,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.rpires.vendas.online.domain.Produto;
-import br.com.rpires.vendas.online.domain.Produto.Status;
-import br.com.rpires.vendas.online.usecase.BuscaProduto;
-import br.com.rpires.vendas.online.usecase.CadastroProduto;
+import br.com.diego.vendas.online.domain.Produto;
+import br.com.diego.vendas.online.domain.Produto.Status;
+import br.com.diego.vendas.online.usecase.BuscaProduto;
+import br.com.diego.vendas.online.usecase.CadastroProduto;
 import io.swagger.v3.oas.annotations.Operation;
 
 @RestController

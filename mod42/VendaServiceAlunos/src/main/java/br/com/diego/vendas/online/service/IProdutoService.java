@@ -1,14 +1,14 @@
 /**
  * 
  */
-package br.com.rpires.vendas.online.service;
+package br.com.diego.vendas.online.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import br.com.rpires.vendas.online.domain.Produto;
+import br.com.diego.vendas.online.domain.Produto;
 
 @FeignClient(name = "produto", url = "${application.produtoService.endpointConsultarProduto}")
 public interface IProdutoService {

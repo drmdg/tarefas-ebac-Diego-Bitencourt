@@ -1,7 +1,4 @@
-/**
- * 
- */
-package br.com.rpires.vendas.online.resources;
+package br.com.diego.vendas.online.resources;
 
 import javax.validation.Valid;
 
@@ -18,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.rpires.vendas.online.domain.Venda;
-import br.com.rpires.vendas.online.dto.VendaDTO;
-import br.com.rpires.vendas.online.usecase.BuscaVenda;
-import br.com.rpires.vendas.online.usecase.CadastroVenda;
+import br.com.diego.vendas.online.domain.Venda;
+import br.com.diego.vendas.online.dto.VendaDTO;
+import br.com.diego.vendas.online.usecase.BuscaVenda;
+import br.com.diego.vendas.online.usecase.CadastroVenda;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;

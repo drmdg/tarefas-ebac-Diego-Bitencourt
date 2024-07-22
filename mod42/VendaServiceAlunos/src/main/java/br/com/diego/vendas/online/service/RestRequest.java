@@ -1,4 +1,4 @@
-package br.com.rpires.vendas.online.service;
+package br.com.diego.vendas.online.service;
 
 import java.util.List;
 

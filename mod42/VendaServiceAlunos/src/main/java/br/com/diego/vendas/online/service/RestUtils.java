@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.com.rpires.vendas.online.service;
+package br.com.diego.vendas.online.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

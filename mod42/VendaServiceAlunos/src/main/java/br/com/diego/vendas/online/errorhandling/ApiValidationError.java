@@ -1,4 +1,4 @@
-package br.com.rpires.vendas.online.errorhandling;
+package br.com.diego.vendas.online.errorhandling;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,4 @@
-/**
- * 
- */
-package br.com.rpires.vendas.online.domain;
+package br.com.diego.vendas.online.domain;
 
 import java.math.BigDecimal;
 import java.time.Instant;

@@ -1,7 +1,4 @@
-/**
- * 
- */
-package br.com.rpires.vendas.online.usecase;
+package br.com.diego.vendas.online.usecase;
 
 import java.util.Optional;
 
@@ -10,9 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import br.com.rpires.vendas.online.domain.Cliente;
-import br.com.rpires.vendas.online.exception.EntityNotFoundException;
-import br.com.rpires.vendas.online.repository.IClienteRepository;
+import br.com.diego.vendas.online.domain.Cliente;
+import br.com.diego.vendas.online.exception.EntityNotFoundException;
+import br.com.diego.vendas.online.repository.IClienteRepository;
 
 @Service
 public class BuscaCliente {

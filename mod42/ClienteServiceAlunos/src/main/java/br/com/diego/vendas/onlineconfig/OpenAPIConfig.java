@@ -1,7 +1,4 @@
-/**
- * 
- */
-package br.com.rpires.vendas.onlineconfig;
+package br.com.diego.vendas.onlineconfig;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +8,7 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
+
 
 @Configuration
 public class OpenAPIConfig {
@@ -24,6 +22,6 @@ public class OpenAPIConfig {
 				          .description("Serviço para gerenciamento de clientes")
 				          .termsOfService("http://swagger.io/terms/")
 				          .license(new License().name("Apache 2.0").url("http://springdoc.org"))
-				          .contact(new Contact().name("Rodrigo Pires").email("rodrigo@rodrigo.com")));
+				          .contact(new Contact().name("Diego").email("diego@diego.com")));
 	}
 }

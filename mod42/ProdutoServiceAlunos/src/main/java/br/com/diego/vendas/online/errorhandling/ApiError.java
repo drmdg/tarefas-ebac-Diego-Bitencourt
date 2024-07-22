@@ -1,4 +1,4 @@
-package br.com.rpires.vendas.online.errorhandling;
+package br.com.diego.vendas.online.errorhandling;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -87,11 +87,6 @@ public class ApiError {
         globalErrors.forEach(this::addValidationError);
     }
 
-    /**
-     * Utility method for adding error of ConstraintViolation. Usually when a @Validated validation fails.
-     *
-     * @param cv the ConstraintViolation
-     */
     private void addValidationError(ConstraintViolation<?> cv) {
         this.addValidationError(
                 cv.getRootBeanClass().getSimpleName(),

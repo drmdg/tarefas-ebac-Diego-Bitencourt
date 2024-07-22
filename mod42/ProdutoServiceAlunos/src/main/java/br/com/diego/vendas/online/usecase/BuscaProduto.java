@@ -1,17 +1,14 @@
-/**
- * 
- */
-package br.com.rpires.vendas.online.usecase;
+package br.com.diego.vendas.online.usecase;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import br.com.rpires.vendas.online.domain.Produto;
-import br.com.rpires.vendas.online.domain.Produto.Status;
-import br.com.rpires.vendas.online.exception.EntityNotFoundException;
-import br.com.rpires.vendas.online.repository.IProdutoRepository;
+import br.com.diego.vendas.online.domain.Produto;
+import br.com.diego.vendas.online.domain.Produto.Status;
+import br.com.diego.vendas.online.exception.EntityNotFoundException;
+import br.com.diego.vendas.online.repository.IProdutoRepository;
 
 @Service
 public class BuscaProduto {

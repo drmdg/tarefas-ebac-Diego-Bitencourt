@@ -1,7 +1,4 @@
-/**
- * 
- */
-package br.com.rpires.vendas.online;
+package br.com.diego.vendas.online;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -16,10 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.ResponseEntity;
 
-import br.com.rpires.vendas.online.domain.Cliente;
-import br.com.rpires.vendas.online.reources.ClienteResource;
-import br.com.rpires.vendas.online.usecase.BuscaCliente;
-import br.com.rpires.vendas.online.usecase.CadastroCliente;
+import br.com.diego.vendas.online.domain.Cliente;
+import br.com.diego.vendas.online.reources.ClienteResource;
+import br.com.diego.vendas.online.usecase.BuscaCliente;
+import br.com.diego.vendas.online.usecase.CadastroCliente;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc

@@ -1,7 +1,4 @@
-/**
- * 
- */
-package br.com.rpires.vendas.online.config;
+package br.com.diego.vendas.online.config;
 
 import javax.validation.Validator;
 
@@ -15,13 +12,11 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 @Configuration
 public class ValidatorConfig {
 	
-//	@Autowired
-//    ResourceBundleMessageSource messageSource;
 
 	@Bean
     public Validator validatorFactory () {
 		LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
-//	    bean.setValidationMessageSource(messageSource);
+
 	    return bean;
     }
 }
